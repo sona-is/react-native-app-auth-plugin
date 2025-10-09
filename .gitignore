@@ -3,9 +3,16 @@ build/
 
 # Package manager artifacts (if installed locally)
 node_modules/
-bun.lockb
-package-lock.json
-yarn.lock
+
+# Lock files for various package managers
+package-lock.json      # npm
+yarn.lock              # yarn
+pnpm-lock.yaml         # pnpm
+bun.lockb              # bun
+bun.lock               # bun
+.yarn/                 # yarn 2+ (berry)
+.pnp.*                 # yarn PnP
+.pnpm-store/           # pnpm store
 
 # TypeScript incremental state
 *.tsbuildinfo
