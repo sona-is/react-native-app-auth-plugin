@@ -6,6 +6,8 @@ Custom Expo config plugin for [react-native-app-auth](https://github.com/Formida
 
 This plugin automatically configures iOS and Android for OAuth authentication when running `expo prebuild`. It replaces `@wavemaker/react-native-app-auth-expo-plugin` with full Swift support for modern Expo SDK versions.
 
+**Compatible with `react-native-app-auth` ^8.0.3**
+
 ## Features
 
 ### iOS (Swift)
@@ -24,41 +26,41 @@ This plugin automatically configures iOS and Android for OAuth authentication wh
 
 ## Installation
 
-The app links this plugin as a local dependency:
+First, install `react-native-app-auth` if you haven't already:
+
+```bash
+npm install react-native-app-auth@^8.0.3
+# or
+yarn add react-native-app-auth@^8.0.3
+# or
+bun add react-native-app-auth@^8.0.3
+```
+
+Then install this plugin from the private git repository:
+
+```bash
+npm install git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git
+# or
+yarn add git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git
+# or
+bun add git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git
+```
+
+Alternatively, add it to your `package.json`:
 
 ```json
-// expo-app/package.json
 {
   "dependencies": {
-    "react-native-app-auth-plugin": "file:plugins/react-native-app-auth-plugin"
+    "react-native-app-auth-plugin": "git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git"
   }
 }
 ```
 
-The plugin itself compiles on install via `prepare`:
-
-```json
-// plugins/react-native-app-auth-plugin/package.json
-{
-  "scripts": {
-    "build": "tsc -p .",
-    "prepare": "npm run build"
-  },
-  "main": "build/index.js",
-  "types": "build/index.d.ts"
-}
-```
-
-Install dependencies (runs `prepare` and builds the plugin):
-
-```bash
-cd expo-app
-bun install
-```
+The plugin compiles automatically on install via the `prepare` script.
 
 ## Usage
 
-Add the plugin to `app.config.ts` using the package name:
+Add the plugin to your Expo config file (`app.config.ts` or `app.config.js`):
 
 ```ts
 plugins: [
@@ -85,10 +87,11 @@ plugins: [
 
 ### Build
 
-Build happens automatically on install via `prepare`. To build manually while iterating:
+Build happens automatically on install via `prepare`. To build manually while developing:
 
 ```bash
-cd expo-app/plugins/react-native-app-auth-plugin
+npm run build
+# or
 bunx tsc -p .
 ```
 
@@ -97,8 +100,7 @@ bunx tsc -p .
 Run prebuild to verify the plugin generates correct native code:
 
 ```bash
-cd expo-app
-bun run prebuild:clean
+npx expo prebuild --clean
 ```
 
 Verify the following files were modified:
@@ -119,8 +121,8 @@ Verify the following files were modified:
 
 ### Plugin not found / Cannot find module
 
-- Ensure install ran the plugin’s `prepare` script: re-run `bun install` from `expo-app`.
-- As a fallback during development, build manually: `bunx tsc -p plugins/react-native-app-auth-plugin`.
+- Ensure install ran the plugin’s `prepare` script: re-run your package manager's install command.
+- As a fallback during development, build manually: `npm run build` or `bunx tsc -p .`.
 
 ### OAuth not working
 
