@@ -1,0 +1,14 @@
+# Generated build artifacts
+build/
+
+# Package manager artifacts (if installed locally)
+node_modules/
+bun.lockb
+package-lock.json
+yarn.lock
+
+# TypeScript incremental state
+*.tsbuildinfo
+
+# Misc
+.DS_Store

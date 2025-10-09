@@ -1,0 +1,37 @@
+{
+  "name": "react-native-app-auth-plugin",
+  "version": "1.0.0",
+  "description": "Expo config plugin for react-native-app-auth with Swift AppDelegate support",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p .",
+    "prepare": "npm run build",
+    "prepack": "npm run build"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "index.ts",
+    "ios",
+    "android",
+    "tsconfig.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "peerDependencies": {
+    "@expo/config-plugins": ">=9 <12"
+  },
+  "devDependencies": {
+    "@expo/config-plugins": "^10.0.0",
+    "typescript": "~5.8.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
