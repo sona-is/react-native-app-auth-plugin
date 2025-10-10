@@ -56,7 +56,7 @@ Alternatively, add it to your `package.json`:
 }
 ```
 
-The plugin compiles automatically on install via the `prepare` script.
+The plugin ships with pre-built JavaScript files, so no compilation is required during installation.
 
 ## Usage
 
@@ -87,13 +87,15 @@ plugins: [
 
 ### Build
 
-Build happens automatically on install via `prepare`. To build manually while developing:
+The plugin ships with pre-built files in the `build/` directory. When making changes to the TypeScript source:
 
 ```bash
 npm run build
 # or
 bunx tsc -p .
 ```
+
+**Important:** Commit the updated `build/` directory after making changes so users get the latest pre-built version.
 
 ### Test via prebuild
 
