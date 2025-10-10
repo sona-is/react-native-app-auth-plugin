@@ -39,11 +39,11 @@ bun add react-native-app-auth@^8.0.3
 Then install this plugin from the private git repository:
 
 ```bash
-npm install git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git
+npm install git+ssh://git@github.com/sona-is/react-native-app-auth-plugin.git
 # or
-yarn add git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git
+yarn add git+ssh://git@github.com/sona-is/react-native-app-auth-plugin.git
 # or
-bun add git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git
+bun add git+ssh://git@github.com/sona-is/react-native-app-auth-plugin.git
 ```
 
 Alternatively, add it to your `package.json`:
@@ -51,7 +51,7 @@ Alternatively, add it to your `package.json`:
 ```json
 {
   "dependencies": {
-    "react-native-app-auth-plugin": "git+ssh://git@github.com:sona-is/react-native-app-auth-plugin.git"
+    "react-native-app-auth-plugin": "git+ssh://git@github.com/sona-is/react-native-app-auth-plugin.git"
   }
 }
 ```
