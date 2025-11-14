@@ -5,6 +5,7 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "private": true,
+  "license": "Apache-2.0",
   "scripts": {
     "build": "tsc -p .",
     "prepack": "npm run build",
